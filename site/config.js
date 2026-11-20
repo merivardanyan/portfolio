@@ -24,12 +24,13 @@ export default {
   about: [
     'I build web apps end to end, from the database schema to the last focus ring. Most of my work is in React, Vue, Node.js and PHP, and I care most about the boring parts that make products feel solid: correct money math, honest loading states, keyboard support, and tests where they count.',
     'Every project on this page runs as a static demo, and most also ship a real backend you can run locally with one command.',
+    'I build with Claude Code and a team of AI agents I set up myself: one plans the projects, two build the front end and back end, two run QA, and one reviews the code like a staff engineer. I read every report and every change, and nothing ships until I have done the final review.',
   ],
   lookingFor: 'Senior full-stack or frontend roles, open to remote',
 
   images: {
     hero: true, // assets/images/hero.webp (1920x1080)
-    portrait: false, // assets/images/portrait.webp (not provided yet)
+    portrait: true, // assets/images/portrait.webp (368x460)
     covers: true, // assets/images/cover-<slug>.webp (1600x1000) for every project
   },
 }

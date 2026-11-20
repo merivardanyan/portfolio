@@ -31,7 +31,7 @@ export const HERO_SIZES = '(min-width: 520px) 818px, calc((100vw - 32px) * 1.78)
 export const HERO_SRCSET = srcset('assets/images/hero.webp', 1920)
 // The only image on the page that can be the LCP element, so the only one with fetchpriority.
 export const HERO_IMG = `<img src="assets/images/hero.webp" srcset="${HERO_SRCSET}" sizes="${HERO_SIZES}" alt="" width="1920" height="1080" fetchpriority="high" decoding="async">`
-export const PORTRAIT_IMG = '<img src="assets/images/portrait.webp" alt="" width="720" height="900" loading="lazy" decoding="async">'
+export const PORTRAIT_IMG = '<img src="assets/images/portrait.webp" alt="" width="368" height="460" loading="lazy" decoding="async">'
 
 export function renderCard(p, cfg, i) {
   const featured = i === 0

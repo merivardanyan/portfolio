@@ -1,0 +1,17 @@
+node_modules/
+dist/
+coverage/
+.env
+projects/*/data/
+*.sqlite
+**/*.sqlite
+assets/source-images/
+public/images/
+dashboard.png
+.claude/
+projects/CLAUDE.md
+projects/generate-image.ps1
+docs/
+.codex/
+projects/claude.md
+site/assets/images/IMAGES_NEEDED.md

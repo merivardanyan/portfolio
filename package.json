@@ -1,0 +1,15 @@
+{
+  "name": "portfolio",
+  "private": true,
+  "type": "module",
+  "description": "Portfolio site (site/) and six project demos (projects/).",
+  "engines": {
+    "node": ">=22.5"
+  },
+  "scripts": {
+    "build:demos": "node scripts/copy-demos.mjs",
+    "build:site": "node scripts/build-site.mjs",
+    "build": "npm run build:demos && npm run build:site",
+    "serve": "node scripts/serve.mjs"
+  }
+}

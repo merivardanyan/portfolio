@@ -1,0 +1,19 @@
+{
+  "name": "@fair-share/core",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Cents-exact money math, bill split and patch reducer shared by the Fair Share client and server.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./money.js": "./money.js",
+    "./split.js": "./split.js",
+    "./bill.js": "./bill.js",
+    "./parse.js": "./parse.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.js\"",
+    "coverage": "node --test --experimental-test-coverage \"test/*.js\""
+  }
+}

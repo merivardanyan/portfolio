@@ -1,0 +1,95 @@
+.picker {
+  display: grid;
+  gap: 1rem;
+}
+
+.pad {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  width: 100%;
+  border-radius: 14px;
+  cursor: crosshair;
+  touch-action: none;
+  background:
+    linear-gradient(to bottom, hsl(0 0% var(--l) / 0), hsl(0 0% var(--l))),
+    linear-gradient(
+      to right,
+      hsl(0 100% var(--l)),
+      hsl(60 100% var(--l)),
+      hsl(120 100% var(--l)),
+      hsl(180 100% var(--l)),
+      hsl(240 100% var(--l)),
+      hsl(300 100% var(--l)),
+      hsl(360 100% var(--l))
+    );
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.08);
+}
+
+.pad:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.thumb {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 1.5px rgb(0 0 0 / 0.55), 0 4px 10px rgb(0 0 0 / 0.35);
+  pointer-events: none;
+}
+
+.lightRow {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.lightLabel {
+  font: 500 0.75rem/1 var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.light {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 32px;
+  margin: 0;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    hsl(var(--h) var(--s) 0%),
+    hsl(var(--h) var(--s) 50%),
+    hsl(var(--h) var(--s) 100%)
+  );
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.1);
+  cursor: pointer;
+}
+
+.light::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: transparent;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 1.5px rgb(0 0 0 / 0.6);
+}
+
+.light::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: transparent;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 1.5px rgb(0 0 0 / 0.6);
+}
+
+.light:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}

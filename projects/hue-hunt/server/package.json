@@ -1,0 +1,13 @@
+{
+  "name": "hue-hunt-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Hue Hunt API: daily seed, server-side score recomputation, leaderboard. node:http + node:sqlite, zero dependencies.",
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test \"test/*.test.js\" && npm --prefix ../core test --silent"
+  }
+}

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Throttle Lab: rate limiting you can see</title>
+    <meta name="description" content="Fire requests at four rate-limiting algorithms side by side and see exactly why the fifth request gets a 429." />
+    <meta name="theme-color" content="#0e1117" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Throttle Lab" />
+    <meta property="og:url" content="./" />
+    <meta property="og:title" content="Throttle Lab: rate limiting you can see" />
+    <meta property="og:description" content="Fixed window, sliding log, sliding counter and token bucket, side by side, with a plain-English reason for every 429." />
+    <meta property="og:image" content="og.png" />
+    <meta property="og:image:alt" content="Throttle Lab: four rate-limiting algorithms drawn as side-by-side timelines of allowed and denied requests." />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Throttle Lab: rate limiting you can see" />
+    <meta name="twitter:description" content="Fixed window, sliding log, sliding counter and token bucket, side by side, with a plain-English reason for every 429." />
+    <meta name="twitter:image" content="og.png" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="back-pill" href="../../">← Portfolio</a>
+    <div class="app">
+      <header class="masthead">
+        <h1>Throttle Lab</h1>
+        <p class="tagline">Fire requests at four rate limiters side by side and see exactly why a request gets a <span class="mono no">429</span>. The lanes run the real library on a simulated clock you can pause and step.</p>
+      </header>
+      <div class="layout">
+        <aside class="sidebar" aria-label="Controls">
+          <div id="controls-slot"></div>
+        </aside>
+        <main class="main">
+          <p class="story" id="story" role="status" hidden></p>
+          <div class="lanes" id="lanes"></div>
+          <div id="server-slot"></div>
+          <footer class="foot">
+            <p>Static demo: everything runs in your browser. The same algorithm code also powers a Node middleware and demo server; see the README.</p>
+          </footer>
+        </main>
+      </div>
+    </div>
+    <p class="vh" id="live" aria-live="polite"></p>
+    <noscript><p style="padding:2rem">Throttle Lab needs JavaScript to run the simulation.</p></noscript>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

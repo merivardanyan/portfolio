@@ -1,0 +1,197 @@
+[
+  {
+    "slug": "hue-hunt",
+    "name": "Hue Hunt",
+    "hook": "See a color for 3 seconds, then rebuild it from memory. A daily puzzle with a Wordle-style result grid.",
+    "stack": [
+      "React",
+      "Node",
+      "SQLite"
+    ],
+    "tags": [
+      "frontend",
+      "backend",
+      "game"
+    ],
+    "demo": "demos/hue-hunt/",
+    "source": "projects/hue-hunt",
+    "image": "assets/images/cover-hue-hunt.webp",
+    "accent": "#ff6b4a",
+    "highlights": [
+      "Perceptual scoring with CIEDE2000 in Lab space, not RGB distance",
+      "Seeded daily puzzle shared by client and server; the server recomputes scores from raw guesses",
+      "Keyboard-operable 2D color picker and a canvas-rendered share card"
+    ],
+    "caseStudy": {
+      "problem": "Make a daily game that is quick, fair and shareable.",
+      "architecture": "A plain-ESM core (seeded RNG, color math, scoring) imported by both the React app and the Node server. The client submits guesses, never scores. node:sqlite stores submissions with one row per player per day.",
+      "decisions": [
+        "The server recomputes every score from the raw guesses, so a submitted score can’t be tampered with",
+        "ΔE2000 maps to a 0-100 score that matches how different two colors look to people",
+        "The static demo swaps the HTTP adapter for a local one that fakes percentiles from a seeded distribution"
+      ]
+    }
+  },
+  {
+    "slug": "ghostwriter",
+    "name": "Ghostwriter",
+    "hook": "Write something, then share a link that plays it back keystroke by keystroke, typos and hesitations included.",
+    "stack": [
+      "React"
+    ],
+    "tags": [
+      "frontend"
+    ],
+    "demo": "demos/ghostwriter/",
+    "source": "projects/ghostwriter",
+    "image": "assets/images/cover-ghostwriter.webp",
+    "accent": "#8b7bff",
+    "highlights": [
+      "Event-sourced document: the text is a fold over a keystroke log",
+      "Compact binary encoding + CompressionStream + base64url fits a replay in the URL",
+      "Snapshot checkpoints make seeking fast instead of replaying from zero"
+    ],
+    "caseStudy": {
+      "problem": "Show how a text was written, not just the result, without a server ever seeing the content.",
+      "architecture": "The editor records insert/delete events with relative timestamps. A codec delta-encodes and deflates them into the URL hash. The player rebuilds state from periodic snapshots for scrubbing.",
+      "decisions": [
+        "Deliberately serverless: the link is the product and the content never leaves the URL",
+        "Varint delta encoding before compression keeps most replays under the URL comfort zone",
+        "Live region announces playback state, not every character"
+      ]
+    }
+  },
+  {
+    "slug": "fair-share",
+    "name": "Fair Share",
+    "hook": "Paste the receipt, send one link, everyone taps what they ate, and tax and tip settle themselves in real time.",
+    "stack": [
+      "React",
+      "Node",
+      "SQLite"
+    ],
+    "tags": [
+      "frontend",
+      "backend",
+      "realtime"
+    ],
+    "demo": "demos/fair-share/",
+    "source": "projects/fair-share",
+    "image": "assets/images/cover-fair-share.webp",
+    "accent": "#2fbf8f",
+    "highlights": [
+      "Integer cents with largest-remainder allocation, so totals reconcile to the penny",
+      "WebSocket sync with versioned patches, optimistic updates and gap recovery",
+      "Static demo syncs between tabs with BroadcastChannel, no server needed"
+    ],
+    "caseStudy": {
+      "problem": "Splitting a group bill is error-prone and nobody wants to install an app at the table.",
+      "architecture": "A pure split function (bill, claims) → per-person totals, shared by client and server. Node + ws broadcasts versioned patches; clients request a snapshot when they detect a version gap.",
+      "decisions": [
+        "Money is never a float: all math is integer cents",
+        "No accounts: each participant gets a secret token, and claims are authenticated against it",
+        "The same UI runs on a BroadcastChannel adapter for the static demo"
+      ]
+    }
+  },
+  {
+    "slug": "seed-sequencer",
+    "name": "Seed Sequencer",
+    "hook": "A garden where every plant is a loop. Plant seeds, prune leaves, and share the song as a link.",
+    "stack": [
+      "Vue",
+      "Pinia",
+      "Web Audio"
+    ],
+    "tags": [
+      "frontend",
+      "audio"
+    ],
+    "demo": "demos/seed-sequencer/",
+    "source": "projects/seed-sequencer",
+    "image": "assets/images/cover-seed-sequencer.webp",
+    "accent": "#7fd6a4",
+    "highlights": [
+      "Look-ahead scheduler on the AudioContext clock, so timer jitter never reaches the audio",
+      "Undo/redo through a command stack that merges slider drags",
+      "A full garden packs into at most about 220 URL characters"
+    ],
+    "caseStudy": {
+      "problem": "Make music creation instant and impossible to get wrong, and make sharing a song as easy as sharing a link.",
+      "architecture": "Vue 3 + Pinia hold the garden; a scheduler queues notes 120 ms ahead on the audio timeline and a rAF loop maps the audio clock back to the UI so plants sway exactly on their notes.",
+      "decisions": [
+        "Everything is quantized to a pentatonic scale, so random input still sounds good",
+        "Synthesized voices and a generated reverb impulse: zero audio files",
+        "Roving-tabindex grids and aria-pressed toggles; motion is off under reduced motion while audio keeps playing"
+      ]
+    }
+  },
+  {
+    "slug": "throttle-lab",
+    "name": "Throttle Lab",
+    "hook": "Fire requests at four rate-limiting algorithms side by side and see exactly why the fifth request gets a 429.",
+    "stack": [
+      "Vanilla JS",
+      "Web Components",
+      "Node",
+      "SQLite"
+    ],
+    "tags": [
+      "frontend",
+      "backend",
+      "devtools"
+    ],
+    "demo": "demos/throttle-lab/",
+    "source": "projects/throttle-lab",
+    "image": "assets/images/cover-throttle-lab.webp",
+    "accent": "#ffb020",
+    "highlights": [
+      "A dependency-free Node rate-limiting library with pluggable memory and SQLite stores",
+      "The same algorithm code drives the in-browser visualization on a simulated clock",
+      "Click any denied request for a plain-English explanation of why"
+    ],
+    "caseStudy": {
+      "problem": "Rate-limiting trade-offs are usually explained with static diagrams that hide the edge cases.",
+      "architecture": "Algorithms are pure step functions over JSON state, so the library, the demo server and the browser share one implementation. Web Components render each lane on canvas.",
+      "decisions": [
+        "Injectable clock makes every algorithm deterministic and testable",
+        "No framework on the frontend, on purpose",
+        "Standard RateLimit-* and Retry-After headers on the real server"
+      ]
+    }
+  },
+  {
+    "slug": "hot-take-court",
+    "name": "Hot Take Court",
+    "hook": "Submit your hottest take, let the internet be the jury, and get a verdict card: guilty of being wrong, or acquitted.",
+    "stack": [
+      "PHP",
+      "MySQL",
+      "SQLite",
+      "Vanilla JS"
+    ],
+    "tags": [
+      "backend",
+      "fullstack",
+      "social"
+    ],
+    "demo": "demos/hot-take-court/",
+    "source": "projects/hot-take-court",
+    "image": "assets/images/cover-hot-take-court.webp",
+    "accent": "#d2452f",
+    "highlights": [
+      "Framework-free PHP: front controller, router, controllers, repositories, PDO prepared statements",
+      "One vote per user per case enforced by a database primary key, with counters updated in the same transaction",
+      "Verdict cards render as SVG in-page and as PNG for link previews"
+    ],
+    "caseStudy": {
+      "problem": "Opinions are fun to argue about, and a verdict card gives each argument something worth sharing.",
+      "architecture": "Server-rendered PHP 8 with session auth, CSRF tokens and rate limiting; MySQL schema with a SQLite twin for local runs. The static demo reimplements the rules on localStorage behind the same API shape.",
+      "decisions": [
+        "Constraints live in the database, not just in PHP",
+        "Trending ranks recent votes with time decay; cases close after 72 hours",
+        "Verdict share links in the demo embed a snapshot, so they work without a server"
+      ]
+    }
+  }
+]

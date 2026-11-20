@@ -1,0 +1,175 @@
+.results {
+  display: grid;
+  gap: 1.75rem;
+}
+
+.head {
+  text-align: center;
+}
+
+.title {
+  font: 500 0.875rem/1 var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 0 0 0.5rem;
+}
+
+.title:focus {
+  outline: none;
+}
+
+.score {
+  font: 700 clamp(4rem, 18vw, 7rem) / 1 var(--font-display);
+  letter-spacing: -0.05em;
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.score span {
+  font-size: 0.45em;
+  color: var(--muted);
+}
+
+.percentile {
+  font-size: 1.125rem;
+  margin: 0.5rem 0 0;
+}
+
+.note {
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+.error {
+  color: var(--miss);
+  margin-top: 0.5rem;
+}
+
+.rounds {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
+  gap: 0.6rem;
+}
+
+.rounds li {
+  display: grid;
+  gap: 0.35rem;
+  justify-items: center;
+}
+
+.pair {
+  display: grid;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.pair span {
+  height: 44px;
+}
+
+.roundScore {
+  font: 700 1.125rem/1 var(--font-display);
+  font-variant-numeric: tabular-nums;
+}
+
+.roundTier {
+  font: 500 0.6875rem/1 var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.roundTier[data-tier='perfect'] {
+  color: var(--good);
+}
+
+.roundTier[data-tier='close'] {
+  color: var(--close);
+}
+
+.roundTier[data-tier='off'] {
+  color: var(--off);
+}
+
+.roundTier[data-tier='miss'] {
+  color: var(--miss);
+}
+
+.share {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: center;
+}
+
+.shareText {
+  font: 400 1rem/1.4 var(--font-mono);
+  background: var(--surface-2);
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  margin: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.cardFigure {
+  margin: 0;
+}
+
+.card {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1200 / 630;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+}
+
+.cardFigure figcaption {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  margin-top: 0.4rem;
+  text-align: center;
+}
+
+.board h2 {
+  font-size: 1.125rem;
+  margin: 0 0 0.75rem;
+}
+
+.boardList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: rank;
+  display: grid;
+  gap: 2px;
+}
+
+.boardList li {
+  counter-increment: rank;
+  display: grid;
+  grid-template-columns: 2rem 1fr auto;
+  padding: 0.5rem 0.75rem;
+  background: var(--surface-2);
+  border-radius: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.boardList li::before {
+  content: counter(rank);
+  color: var(--muted);
+  font-family: var(--font-mono);
+}

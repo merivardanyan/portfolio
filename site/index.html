@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <!--csp:start--><!--csp:end-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meri Vardanyan · Senior full-stack developer</title>
+  <meta name="description" content="Portfolio: six web apps people want to share, built with React, Vue, Node.js and PHP. Every project runs as a live demo.">
+  <meta name="theme-color" content="#121212">
+  <link rel="canonical" href="https://merivardanyan.github.io/portfolio/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Meri Vardanyan">
+  <meta property="og:title" content="Meri Vardanyan · Senior full-stack developer">
+  <meta property="og:description" content="Six web apps people want to share. Live demos, real backends, readable source.">
+  <meta property="og:url" content="https://merivardanyan.github.io/portfolio/">
+  <meta property="og:image" content="https://merivardanyan.github.io/portfolio/assets/images/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Meri Vardanyan · Senior full-stack developer">
+  <meta name="twitter:description" content="Six web apps people want to share. Live demos, real backends, readable source.">
+  <meta name="twitter:image" content="https://merivardanyan.github.io/portfolio/assets/images/og.png">
+  <meta property="og:image:alt" content="A futuristic city skyline at dusk, towers glowing orange above the fog">
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/images/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/space-grotesk-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <!--preload-hero:start--><!--preload-hero:end-->
+  <link rel="stylesheet" href="styles.css">
+  <script>(function(){var d=document.documentElement,t;try{t=localStorage.getItem('theme')}catch(e){}if(t!=='light'&&t!=='dark')t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';d.dataset.theme=t;d.classList.add('js')})()</script>
+  <script type="module" src="main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="container site-header__inner">
+      <a class="brand" href="#top"><span class="brand__mark" aria-hidden="true" data-config="initials">MV</span><span class="brand__name" data-config="name">Meri Vardanyan</span></a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to light theme" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path class="i-moon" d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/><g class="i-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero__text">
+        <p class="eyebrow"><span data-config="role">Senior full-stack developer</span> · <span data-config="location">Open to remote</span></p>
+        <h1 id="hero-title">I build web apps people actually want to share.</h1>
+        <p class="hero__sub"><span data-config="years">7+</span> years across React, Vue, Node.js and PHP. Below are six of them: each one is live, runs in your browser, and has source you can read.</p>
+        <div class="hero__ctas">
+          <a class="btn btn--primary btn--lg" href="#work">See the work</a>
+          <a class="btn btn--lg" href="#contact">Get in touch</a>
+        </div>
+      </div>
+      <div class="hero__art" aria-hidden="true">
+        <!--hero:start--><img src="assets/images/hero.webp" srcset="assets/images/hero-800.webp 800w, assets/images/hero-1200.webp 1200w, assets/images/hero.webp 1920w" sizes="(min-width: 520px) 818px, calc((100vw - 32px) * 1.78)" alt="" width="1920" height="1080" fetchpriority="high" decoding="async"><!--hero:end-->
+        <canvas id="hero-canvas"></canvas>
+      </div>
+    </section>
+
+    <section class="section container reveal" id="work" aria-labelledby="work-title">
+      <div class="section__head">
+        <p class="eyebrow">Selected work</p>
+        <h2 id="work-title">Six projects, all of them live demos</h2>
+        <p class="section__lede">Each project ships a static demo that runs on browser storage, plus a real backend where one makes sense. The frontends talk to a single API module, so switching between a mock adapter and the real server is one setting.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter projects by technology" hidden>
+        <button type="button" class="chip" aria-pressed="true" data-filter="All">All</button>
+        <button type="button" class="chip" aria-pressed="false" data-filter="React">React</button>
+        <button type="button" class="chip" aria-pressed="false" data-filter="Vue">Vue</button>
+        <button type="button" class="chip" aria-pressed="false" data-filter="Node">Node</button>
+        <button type="button" class="chip" aria-pressed="false" data-filter="PHP">PHP</button>
+      </div>
+      <p class="vh" id="filter-status" aria-live="polite"></p>
+      <ul class="grid" id="project-grid">
+<!--grid:start-->
+<li class="card card--featured" data-stack="react node sqlite" style="--card-accent:#ff6b4a">
+  <article class="card__inner" aria-labelledby="t-hue-hunt">
+    <a class="card__media" href="demos/hue-hunt/" tabindex="-1" aria-hidden="true"><div class="cover" aria-hidden="true"><img src="assets/images/cover-hue-hunt.webp" srcset="assets/images/cover-hue-hunt-800.webp 800w, assets/images/cover-hue-hunt-1200.webp 1200w, assets/images/cover-hue-hunt.webp 1600w" sizes="(min-width: 1200px) 655px, (min-width: 800px) 56vw, calc(100vw - 32px)" alt="" width="1600" height="1000" loading="lazy" decoding="async"></div></a>
+    <div class="card__body">
+      <h3 class="card__title" id="t-hue-hunt">Hue Hunt</h3>
+      <p class="card__hook">See a color for 3 seconds, then rebuild it from memory. A daily puzzle with a Wordle-style result grid.</p>
+      <ul class="badges" aria-label="Stack"><li>React</li><li>Node</li><li>SQLite</li></ul>
+      <div class="card__actions">
+        <a class="btn btn--primary" href="demos/hue-hunt/">Live demo<span class="vh">: Hue Hunt</span></a>
+        <a class="btn" href="https://github.com/merivardanyan/portfolio/tree/main/projects/hue-hunt" rel="noopener">Source<span class="vh">: Hue Hunt</span></a>
+      </div>
+      <details class="case" id="case-hue-hunt">
+        <summary>Case study<span class="vh">: Hue Hunt</span></summary>
+        <div class="case__body">
+          <h4>Problem</h4><p>Make a daily game that is quick, fair and shareable.</p>
+          <h4>Architecture</h4><p>A plain-ESM core (seeded RNG, color math, scoring) imported by both the React app and the Node server. The client submits guesses, never scores. node:sqlite stores submissions with one row per player per day.</p>
+          <h4>Highlights</h4><ul><li>Perceptual scoring with CIEDE2000 in Lab space, not RGB distance</li><li>Seeded daily puzzle shared by client and server; the server recomputes scores from raw guesses</li><li>Keyboard-operable 2D color picker and a canvas-rendered share card</li></ul>
+          <h4>Key decisions</h4><ul><li>The server recomputes every score from the raw guesses, so a submitted score can’t be tampered with</li><li>ΔE2000 maps to a 0-100 score that matches how different two colors look to people</li><li>The static demo swaps the HTTP adapter for a local one that fakes percentiles from a seeded distribution</li></ul>
+          <h4>Stack</h4><p>React, Node, SQLite</p>
+        </div>
+      </details>
+    </div>
+  </article>
+</li>
+<li class="card" data-stack="react" style="--card-accent:#8b7bff">
+  <article class="card__inner" aria-labelledby="t-ghostwriter">
+    <a class="card__media" href="demos/ghostwriter/" tabindex="-1" aria-hidden="true"><div class="cover" aria-hidden="true"><img src="assets/images/cover-ghostwriter.webp" srcset="assets/images/cover-ghostwriter-800.webp 800w, assets/images/cover-ghostwriter-1200.webp 1200w, assets/images/cover-ghostwriter.webp 1600w" sizes="(min-width: 1200px) 570px, (min-width: 800px) 48vw, calc(100vw - 32px)" alt="" width="1600" height="1000" loading="lazy" decoding="async"></div></a>
+    <div class="card__body">
+      <h3 class="card__title" id="t-ghostwriter">Ghostwriter</h3>
+      <p class="card__hook">Write something, then share a link that plays it back keystroke by keystroke, typos and hesitations included.</p>
+      <ul class="badges" aria-label="Stack"><li>React</li></ul>
+      <div class="card__actions">
+        <a class="btn btn--primary" href="demos/ghostwriter/">Live demo<span class="vh">: Ghostwriter</span></a>
+        <a class="btn" href="https://github.com/merivardanyan/portfolio/tree/main/projects/ghostwriter" rel="noopener">Source<span class="vh">: Ghostwriter</span></a>
+      </div>
+      <details class="case" id="case-ghostwriter">
+        <summary>Case study<span class="vh">: Ghostwriter</span></summary>
+        <div class="case__body">
+          <h4>Problem</h4><p>Show how a text was written, not just the result, without a server ever seeing the content.</p>
+          <h4>Architecture</h4><p>The editor records insert/delete events with relative timestamps. A codec delta-encodes and deflates them into the URL hash. The player rebuilds state from periodic snapshots for scrubbing.</p>
+          <h4>Highlights</h4><ul><li>Event-sourced document: the text is a fold over a keystroke log</li><li>Compact binary encoding + CompressionStream + base64url fits a replay in the URL</li><li>Snapshot checkpoints make seeking fast instead of replaying from zero</li></ul>
+          <h4>Key decisions</h4><ul><li>Deliberately serverless: the link is the product and the content never leaves the URL</li><li>Varint delta encoding before compression keeps most replays under the URL comfort zone</li><li>Live region announces playback state, not every character</li></ul>
+          <h4>Stack</h4><p>React</p>
+        </div>
+      </details>
+    </div>
+  </article>
+</li>
+<li class="card" data-stack="react node sqlite" style="--card-accent:#2fbf8f">
+  <article class="card__inner" aria-labelledby="t-fair-share">
+    <a class="card__media" href="demos/fair-share/" tabindex="-1" aria-hidden="true"><div class="cover" aria-hidden="true"><img src="assets/images/cover-fair-share.webp" srcset="assets/images/cover-fair-share-800.webp 800w, assets/images/cover-fair-share-1200.webp 1200w, assets/images/cover-fair-share.webp 1600w" sizes="(min-width: 1200px) 570px, (min-width: 800px) 48vw, calc(100vw - 32px)" alt="" width="1600" height="1000" loading="lazy" decoding="async"></div></a>
+    <div class="card__body">
+      <h3 class="card__title" id="t-fair-share">Fair Share</h3>
+      <p class="card__hook">Paste the receipt, send one link, everyone taps what they ate, and tax and tip settle themselves in real time.</p>
+      <ul class="badges" aria-label="Stack"><li>React</li><li>Node</li><li>SQLite</li></ul>
+      <div class="card__actions">
+        <a class="btn btn--primary" href="demos/fair-share/">Live demo<span class="vh">: Fair Share</span></a>
+        <a class="btn" href="https://github.com/merivardanyan/portfolio/tree/main/projects/fair-share" rel="noopener">Source<span class="vh">: Fair Share</span></a>
+      </div>
+      <details class="case" id="case-fair-share">
+        <summary>Case study<span class="vh">: Fair Share</span></summary>
+        <div class="case__body">
+          <h4>Problem</h4><p>Splitting a group bill is error-prone and nobody wants to install an app at the table.</p>
+          <h4>Architecture</h4><p>A pure split function (bill, claims) → per-person totals, shared by client and server. Node + ws broadcasts versioned patches; clients request a snapshot when they detect a version gap.</p>
+          <h4>Highlights</h4><ul><li>Integer cents with largest-remainder allocation, so totals reconcile to the penny</li><li>WebSocket sync with versioned patches, optimistic updates and gap recovery</li><li>Static demo syncs between tabs with BroadcastChannel, no server needed</li></ul>
+          <h4>Key decisions</h4><ul><li>Money is never a float: all math is integer cents</li><li>No accounts: each participant gets a secret token, and claims are authenticated against it</li><li>The same UI runs on a BroadcastChannel adapter for the static demo</li></ul>
+          <h4>Stack</h4><p>React, Node, SQLite</p>
+        </div>
+      </details>
+    </div>
+  </article>
+</li>
+<li class="card" data-stack="vue pinia web audio" style="--card-accent:#7fd6a4">
+  <article class="card__inner" aria-labelledby="t-seed-sequencer">
+    <a class="card__media" href="demos/seed-sequencer/" tabindex="-1" aria-hidden="true"><div class="cover" aria-hidden="true"><img src="assets/images/cover-seed-sequencer.webp" srcset="assets/images/cover-seed-sequencer-800.webp 800w, assets/images/cover-seed-sequencer-1200.webp 1200w, assets/images/cover-seed-sequencer.webp 1600w" sizes="(min-width: 1200px) 570px, (min-width: 800px) 48vw, calc(100vw - 32px)" alt="" width="1600" height="1000" loading="lazy" decoding="async"></div></a>
+    <div class="card__body">
+      <h3 class="card__title" id="t-seed-sequencer">Seed Sequencer</h3>
+      <p class="card__hook">A garden where every plant is a loop. Plant seeds, prune leaves, and share the song as a link.</p>
+      <ul class="badges" aria-label="Stack"><li>Vue</li><li>Pinia</li><li>Web Audio</li></ul>
+      <div class="card__actions">
+        <a class="btn btn--primary" href="demos/seed-sequencer/">Live demo<span class="vh">: Seed Sequencer</span></a>
+        <a class="btn" href="https://github.com/merivardanyan/portfolio/tree/main/projects/seed-sequencer" rel="noopener">Source<span class="vh">: Seed Sequencer</span></a>
+      </div>
+      <details class="case" id="case-seed-sequencer">
+        <summary>Case study<span class="vh">: Seed Sequencer</span></summary>
+        <div class="case__body">
+          <h4>Problem</h4><p>Make music creation instant and impossible to get wrong, and make sharing a song as easy as sharing a link.</p>
+          <h4>Architecture</h4><p>Vue 3 + Pinia hold the garden; a scheduler queues notes 120 ms ahead on the audio timeline and a rAF loop maps the audio clock back to the UI so plants sway exactly on their notes.</p>
+          <h4>Highlights</h4><ul><li>Look-ahead scheduler on the AudioContext clock, so timer jitter never reaches the audio</li><li>Undo/redo through a command stack that merges slider drags</li><li>A full garden packs into at most about 220 URL characters</li></ul>
+          <h4>Key decisions</h4><ul><li>Everything is quantized to a pentatonic scale, so random input still sounds good</li><li>Synthesized voices and a generated reverb impulse: zero audio files</li><li>Roving-tabindex grids and aria-pressed toggles; motion is off under reduced motion while audio keeps playing</li></ul>
+          <h4>Stack</h4><p>Vue, Pinia, Web Audio</p>
+        </div>
+      </details>
+    </div>
+  </article>
+</li>
+<li class="card" data-stack="vanilla js web components node sqlite" style="--card-accent:#ffb020">
+  <article class="card__inner" aria-labelledby="t-throttle-lab">
+    <a class="card__media" href="demos/throttle-lab/" tabindex="-1" aria-hidden="true"><div class="cover" aria-hidden="true"><img src="assets/images/cover-throttle-lab.webp" srcset="assets/images/cover-throttle-lab-800.webp 800w, assets/images/cover-throttle-lab-1200.webp 1200w, assets/images/cover-throttle-lab.webp 1600w" sizes="(min-width: 1200px) 570px, (min-width: 800px) 48vw, calc(100vw - 32px)" alt="" width="1600" height="1000" loading="lazy" decoding="async"></div></a>
+    <div class="card__body">
+      <h3 class="card__title" id="t-throttle-lab">Throttle Lab</h3>
+      <p class="card__hook">Fire requests at four rate-limiting algorithms side by side and see exactly why the fifth request gets a 429.</p>
+      <ul class="badges" aria-label="Stack"><li>Vanilla JS</li><li>Web Components</li><li>Node</li><li>SQLite</li></ul>
+      <div class="card__actions">
+        <a class="btn btn--primary" href="demos/throttle-lab/">Live demo<span class="vh">: Throttle Lab</span></a>
+        <a class="btn" href="https://github.com/merivardanyan/portfolio/tree/main/projects/throttle-lab" rel="noopener">Source<span class="vh">: Throttle Lab</span></a>
+      </div>
+      <details class="case" id="case-throttle-lab">
+        <summary>Case study<span class="vh">: Throttle Lab</span></summary>
+        <div class="case__body">
+          <h4>Problem</h4><p>Rate-limiting trade-offs are usually explained with static diagrams that hide the edge cases.</p>
+          <h4>Architecture</h4><p>Algorithms are pure step functions over JSON state, so the library, the demo server and the browser share one implementation. Web Components render each lane on canvas.</p>
+          <h4>Highlights</h4><ul><li>A dependency-free Node rate-limiting library with pluggable memory and SQLite stores</li><li>The same algorithm code drives the in-browser visualization on a simulated clock</li><li>Click any denied request for a plain-English explanation of why</li></ul>
+          <h4>Key decisions</h4><ul><li>Injectable clock makes every algorithm deterministic and testable</li><li>No framework on the frontend, on purpose</li><li>Standard RateLimit-* and Retry-After headers on the real server</li></ul>
+          <h4>Stack</h4><p>Vanilla JS, Web Components, Node, SQLite</p>
+        </div>
+      </details>
+    </div>
+  </article>
+</li>
+<li class="card" data-stack="php mysql sqlite vanilla js" style="--card-accent:#d2452f">
+  <article class="card__inner" aria-labelledby="t-hot-take-court">
+    <a class="card__media" href="demos/hot-take-court/" tabindex="-1" aria-hidden="true"><div class="cover" aria-hidden="true"><img src="assets/images/cover-hot-take-court.webp" srcset="assets/images/cover-hot-take-court-800.webp 800w, assets/images/cover-hot-take-court-1200.webp 1200w, assets/images/cover-hot-take-court.webp 1600w" sizes="(min-width: 1200px) 570px, (min-width: 800px) 48vw, calc(100vw - 32px)" alt="" width="1600" height="1000" loading="lazy" decoding="async"></div></a>
+    <div class="card__body">
+      <h3 class="card__title" id="t-hot-take-court">Hot Take Court</h3>
+      <p class="card__hook">Submit your hottest take, let the internet be the jury, and get a verdict card: guilty of being wrong, or acquitted.</p>
+      <ul class="badges" aria-label="Stack"><li>PHP</li><li>MySQL</li><li>SQLite</li><li>Vanilla JS</li></ul>
+      <div class="card__actions">
+        <a class="btn btn--primary" href="demos/hot-take-court/">Live demo<span class="vh">: Hot Take Court</span></a>
+        <a class="btn" href="https://github.com/merivardanyan/portfolio/tree/main/projects/hot-take-court" rel="noopener">Source<span class="vh">: Hot Take Court</span></a>
+      </div>
+      <details class="case" id="case-hot-take-court">
+        <summary>Case study<span class="vh">: Hot Take Court</span></summary>
+        <div class="case__body">
+          <h4>Problem</h4><p>Opinions are fun to argue about, and a verdict card gives each argument something worth sharing.</p>
+          <h4>Architecture</h4><p>Server-rendered PHP 8 with session auth, CSRF tokens and rate limiting; MySQL schema with a SQLite twin for local runs. The static demo reimplements the rules on localStorage behind the same API shape.</p>
+          <h4>Highlights</h4><ul><li>Framework-free PHP: front controller, router, controllers, repositories, PDO prepared statements</li><li>One vote per user per case enforced by a database primary key, with counters updated in the same transaction</li><li>Verdict cards render as SVG in-page and as PNG for link previews</li></ul>
+          <h4>Key decisions</h4><ul><li>Constraints live in the database, not just in PHP</li><li>Trending ranks recent votes with time decay; cases close after 72 hours</li><li>Verdict share links in the demo embed a snapshot, so they work without a server</li></ul>
+          <h4>Stack</h4><p>PHP, MySQL, SQLite, Vanilla JS</p>
+        </div>
+      </details>
+    </div>
+  </article>
+</li>
+<!--grid:end-->
+      </ul>
+    </section>
+
+    <section class="section container reveal" id="approach" aria-labelledby="approach-title">
+      <div class="section__head">
+        <p class="eyebrow">How I build</p>
+        <h2 id="approach-title">Four habits, each with proof you can check</h2>
+      </div>
+      <div class="pillars">
+        <article class="pillar">
+          <span class="pillar__num" aria-hidden="true">01</span>
+          <h3>Architecture first</h3>
+          <p>Pure core modules, thin adapters at the edges, and one API module per frontend.</p>
+          <a class="proof" href="#case-hue-hunt" data-open-case>Hue Hunt’s React app and Node server import the same scoring core.</a>
+        </article>
+        <article class="pillar">
+          <span class="pillar__num" aria-hidden="true">02</span>
+          <h3>Accessible by default</h3>
+          <p>Semantic HTML, visible focus, full keyboard support and reduced-motion handling from the first commit.</p>
+          <a class="proof" href="#case-seed-sequencer" data-open-case>Seed Sequencer's music grids are fully playable from the keyboard.</a>
+        </article>
+        <article class="pillar">
+          <span class="pillar__num" aria-hidden="true">03</span>
+          <h3>Fast on real devices</h3>
+          <p>Small bundles, no layout shift, and no third-party requests unless they pay for themselves.</p>
+          <a class="proof" href="#case-throttle-lab" data-open-case>Throttle Lab’s whole interface ships in about 11 KB of gzipped JavaScript, with no framework.</a>
+        </article>
+        <article class="pillar">
+          <span class="pillar__num" aria-hidden="true">04</span>
+          <h3>Tested where it matters</h3>
+          <p>Unit tests concentrate on the logic that would hurt if it broke, rather than chasing a coverage number on the UI.</p>
+          <a class="proof" href="#case-fair-share" data-open-case>Fair Share's split math is tested down to single-cent remainders.</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="section container reveal" id="stack" aria-labelledby="stack-title">
+      <div class="section__head">
+        <p class="eyebrow">Stack</p>
+        <h2 id="stack-title">Tools I reach for</h2>
+      </div>
+      <dl class="stack">
+        <div><dt>Frontend</dt><dd>HTML, CSS, JavaScript, React, Vue 3, Pinia, Zustand, Web Components, Canvas, SVG, Web Audio</dd></div>
+        <div><dt>Backend</dt><dd>Node.js, PHP 8, REST, WebSockets, session auth, CSRF protection, rate limiting</dd></div>
+        <div><dt>Data</dt><dd>MySQL, SQLite (node:sqlite, PDO), schema design, indexing, transactions, localStorage, IndexedDB</dd></div>
+        <div><dt>Tooling</dt><dd>Vite, Vitest, node:test, Git, GitHub Pages, Lighthouse, axe</dd></div>
+      </dl>
+    </section>
+
+    <section class="section container reveal" id="about" aria-labelledby="about-title">
+      <div class="about">
+        <div class="portrait" aria-hidden="true">
+          <span class="portrait__initials" data-config="initials">MV</span>
+          <!--portrait:start--><!--portrait:end-->
+        </div>
+        <div class="about__text">
+          <p class="eyebrow">About</p>
+          <h2 id="about-title">Hi, I'm <span data-config="name">Meri Vardanyan</span>.</h2>
+          <p data-config="about0">I build web apps end to end, from the database schema to the last focus ring. Most of my work is in React, Vue, Node.js and PHP, and I care most about the boring parts that make products feel solid: correct money math, honest loading states, keyboard support, and tests where they count.</p>
+          <p data-config="about1">Every project on this page runs as a static demo, and most also ship a real backend you can run locally with one command.</p>
+          <p data-config="about2">YOUR SENTENCE: what you are looking for, e.g. the kind of team, role and product you want to work on next.</p>
+          <dl class="facts">
+            <div><dt>Experience</dt><dd><span data-config="years">7+</span> years</dd></div>
+            <div><dt>Based in</dt><dd data-config="location">Open to remote</dd></div>
+            <div><dt>Looking for</dt><dd data-config="lookingFor">Senior full-stack or frontend roles, open to remote</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container reveal" id="contact" aria-labelledby="contact-title">
+      <div class="contact">
+        <p class="eyebrow">Contact</p>
+        <h2 id="contact-title">Have a role or a project in mind?</h2>
+        <p class="section__lede">Email is the fastest way to reach me. GitHub and LinkedIn work too.</p>
+        <div class="contact__email">
+          <a href="mailto:ms.merivardanyan@gmail.com" class="email-link" data-config-href="email" data-config="email">ms.merivardanyan@gmail.com</a>
+          <button type="button" class="btn" id="copy-email" hidden>Copy email</button>
+          <span class="copy-status" id="copy-status" role="status"></span>
+        </div>
+        <ul class="socials">
+          <li><a href="https://github.com/merivardanyan" data-config-href="github" rel="me noopener">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/mvardanyan/" data-config-href="linkedin" rel="me noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>Hand-coded, no framework, one small build script: <span id="weight">~130 KB</span> of code and fonts.</p>
+      <p>© <span data-config="year">2026</span> <span data-config="name">Meri Vardanyan</span> · <a href="https://github.com/merivardanyan/portfolio" data-config-href="repo">Source</a></p>
+    </div>
+  </footer>
+</body>
+</html>

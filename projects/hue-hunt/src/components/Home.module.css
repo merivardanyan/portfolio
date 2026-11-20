@@ -1,0 +1,139 @@
+.home {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.hero {
+  text-align: center;
+  display: grid;
+  justify-items: center;
+}
+
+.kicker {
+  font: 500 0.8125rem/1 var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin: 0 0 0.75rem;
+}
+
+.title {
+  font: 700 clamp(3rem, 14vw, 6rem) / 0.95 var(--font-display);
+  letter-spacing: -0.05em;
+  margin: 0 0 1rem;
+  background: linear-gradient(90deg, #ff5f6d, #ffc371, #7ee8a2, #5ec8ff, #b18cff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (forced-colors: active) {
+  .title {
+    color: CanvasText;
+    background: none;
+  }
+}
+
+.lede {
+  font-size: 1.125rem;
+  max-width: 36ch;
+  margin: 0 0 1.75rem;
+  text-wrap: balance;
+}
+
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.done {
+  flex-basis: 100%;
+  margin: 0 0 0.25rem;
+  font-size: 1.0625rem;
+}
+
+.nick {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 0.35rem;
+  width: min(100%, 20rem);
+  text-align: left;
+}
+
+.nick label {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.how h2 {
+  font-size: 1.125rem;
+  margin: 0 0 0.75rem;
+}
+
+.how ol {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 0.5rem;
+  color: var(--muted);
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  font: 400 0.875rem/1 var(--font-mono);
+  margin: 0;
+}
+
+.demoNote {
+  font-size: 0.8125rem;
+  color: var(--muted);
+  text-align: center;
+  margin: 0;
+}
+
+.fieldError {
+  color: var(--miss);
+  font-size: 0.875rem;
+  margin: 0.25rem 0 0;
+}
+
+.offline {
+  margin: 1.25rem 0 0;
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+.retry {
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+.retry h1 {
+  font: 700 clamp(1.5rem, 5vw, 2rem) / 1.15 var(--font-display);
+  margin: 0 0 1rem;
+}
+
+.retry h1:focus {
+  outline: none;
+}
+
+.retryError {
+  color: var(--miss);
+  font-weight: 600;
+}
+
+.retry .nick {
+  width: 100%;
+}
+
+.retryActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}

@@ -1,0 +1,15 @@
+{
+  "name": "throttle-lab-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Demo server: endpoints guarded by each throttle-lab algorithm, with standard RateLimit headers. Zero dependencies.",
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "start": "node demo.js",
+    "start:sqlite": "node demo.js --store sqlite",
+    "dev": "node --watch demo.js",
+    "load": "node load.js",
+    "test": "node --test \"test/*.test.js\" && npm --prefix ../lib test --silent"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "fair-share-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fair Share real-time bill API: REST + WebSocket, node:sqlite, shared core reducer.",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test \"test/*.test.js\" && npm --prefix ../core test --silent"
+  },
+  "dependencies": {
+    "ws": "^8.23.0"
+  }
+}

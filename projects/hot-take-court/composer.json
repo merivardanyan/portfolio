@@ -1,0 +1,26 @@
+{
+    "name": "portfolio/hot-take-court",
+    "description": "Put your opinion on trial. Framework-free PHP 8 + PDO (SQLite locally, MySQL 8 in production).",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": ">=8.2",
+        "ext-pdo": "*",
+        "ext-mbstring": "*"
+    },
+    "suggest": {
+        "ext-pdo_sqlite": "Local development and tests",
+        "ext-pdo_mysql": "Production database",
+        "ext-curl": "Needed by tests/smoke.php"
+    },
+    "autoload": {
+        "psr-4": { "App\\": "src/" },
+        "files": ["src/helpers.php"]
+    },
+    "scripts": {
+        "start": "php -S localhost:8080 -t public public/index.php",
+        "seed": "php db/seed.php --fresh",
+        "test": "php tests/smoke.php"
+    },
+    "config": { "process-timeout": 0 }
+}

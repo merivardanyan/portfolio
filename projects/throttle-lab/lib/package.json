@@ -1,0 +1,22 @@
+{
+  "name": "throttle-lab",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Zero-dependency rate limiting: fixed window, sliding log, sliding counter, token bucket. Browser + Node, injectable clock, pluggable stores.",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./algorithms.js": "./algorithms.js",
+    "./limiter.js": "./limiter.js",
+    "./middleware.js": "./middleware.js",
+    "./explain.js": "./explain.js",
+    "./clock.js": "./clock.js",
+    "./stores/memory.js": "./stores/memory.js",
+    "./stores/sqlite.js": "./stores/sqlite.js"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.js\"",
+    "coverage": "node --test --experimental-test-coverage \"test/*.js\""
+  }
+}
